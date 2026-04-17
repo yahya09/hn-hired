@@ -1,5 +1,5 @@
 import pkg from "@prisma/client";
-import { installGlobals } from "@remix-run/node";
+// import { installGlobals } from "@remix-run/node";
 import pLimit from "p-limit";
 const { PrismaClient, Prisma } = pkg;
 const { FLY_REGION, PRIMARY_REGION } = process.env;
@@ -35,7 +35,7 @@ interface ItemTextMatches {
 }
 
 async function getLatestStoryAndItems() {
-  installGlobals();
+  // installGlobals(); // Node 24 has native fetch
 
   if (FLY_REGION !== PRIMARY_REGION)
     throw new Error("No writes when replica is the target");
