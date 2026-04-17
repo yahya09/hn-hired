@@ -34,6 +34,7 @@ model Item {
   contract          Boolean  @default(false)
   remote            Boolean  @default(false)
   tags              Tag[]
+  forMe             Boolean  @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
